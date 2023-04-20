@@ -12,14 +12,12 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
-      with:
-        node-version: 16
-        
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.8
-        node-version: 16
+
+- name: Set up Python
+  uses: actions/setup-python@v3
+  with:
+    python-version: 3.8
+    node-version: 16
 
     - name: Install dependencies
       run: |
