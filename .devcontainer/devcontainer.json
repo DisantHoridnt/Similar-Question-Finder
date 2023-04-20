@@ -1,7 +1,6 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-  },
+  "features": {},
   "extensions": ["hashicorp.terraform"],
   "forwardPorts": [],
   "postCreateCommand": [
@@ -19,5 +18,8 @@
   ],
   "settings": {
     "terminal.integrated.defaultProfile.linux": "/bin/bash"
-  }
+  },
+  "name": "Terraform with AWS on GitHub Code Spaces",
+  "dockerFile": "Dockerfile",
+  "postCreateCommand": "echo 'Welcome to your Terraform with AWS Code Space!'"
 }
