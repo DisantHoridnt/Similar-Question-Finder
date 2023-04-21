@@ -20,6 +20,7 @@ load_dotenv()
 WCS_USERNAME = os.getenv("WCS_USERNAME")
 WCS_PASSWORD = os.getenv("WCS_PASSWORD")
 
+
 @app.route('/api/questions', methods=['POST'])
 def get_similar_questions():
     input_question = request.json.get("input_question", "")
@@ -30,10 +31,9 @@ def get_similar_questions():
     question_vector = embeddings.pooler_output[0].numpy()
 
     auth_config = weaviate.AuthClientPassword(
-        username=WCS_USERNAME,
-        password=WCS_PASSWORD,
+        username = "WCS_USERNAME",  # Replace w/ your WCS username
+        password = "WCS_PASSWORD",  # Replace w/ your WCS password
     )
-
     # Instantiate the client with the auth config
     client = weaviate.Client(
         url="https://similar-questions-finder-2o110ewv.weaviate.network",  # Replace w/ your endpoint
